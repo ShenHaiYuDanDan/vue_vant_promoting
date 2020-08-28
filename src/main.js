@@ -6,7 +6,8 @@ import { Row, Col } from 'vant';
 
 import { Icon } from 'vant';
 Vue.use(Icon);
-
+import {Popup} from 'vant';
+Vue.use(Popup)
 import { Cell, CellGroup } from 'vant';
 Vue.use(Cell).use(CellGroup);
 

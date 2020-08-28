@@ -8,6 +8,8 @@ import Info from './components/login/info';
 import Registe from './components/login/registe';
 import Article from './components/details/article';
 import userOrder from './components/order/user_order'
+import recharge from './components/order/recharge'
+import alipay from './components/order/alipay'
 import Chart from './components/echarts/chart';
 import { IndexAnchor } from 'vant';
 Vue.use(Router);
@@ -96,6 +98,24 @@ export default new Router({
         type:'/login'
       }
     },
+    {
+      path: '/recharge',
+      name:'recharge',
+      component: recharge,
+      meta: {
+        title: '充值中心',
+        type: '/login'
+      }
+    },
+    {
+      path:'/alipay',
+      name:'alipay',
+      component: alipay,
+      meta:{
+        title:'充值中...',
+        type: '/login'
+      }
+    }
     
     // {
     //   path: '/index',

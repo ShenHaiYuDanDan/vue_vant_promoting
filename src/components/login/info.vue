@@ -13,7 +13,7 @@
         </div>
         <div>
             <van-grid clickable :column-num="2" icon-size=15>
-                <van-grid-item icon='gold-coin-o' text='充值' to='/'></van-grid-item>
+                <van-grid-item icon='gold-coin-o' text='充值' to='/recharge'></van-grid-item>
                 <van-grid-item icon='paid' text='提现' to='/'></van-grid-item>
             </van-grid>
         </div>
@@ -63,6 +63,7 @@
                     params: {
                         phone: phones,
                     },
+
                 }).then((res) => {
                     if (res.data.code == 1000) {
                         // console.log(res.data.data.userPortrait);
@@ -71,7 +72,7 @@
                         localStorage.removeItem("token");
                         localStorage.removeItem("param");
                         this.$toast({
-                            message: "用户登录失效，请刷新页面重新登录",
+                            message: "请重新登陆",
                         });
                         this.logOut()
                     } else {
@@ -86,7 +87,7 @@
                 data.append("file", file.file);
                 // axios
                 // .post("http://106.13.164.46:8081/user/upload/" + this.id, data)
-                axios.post("/api/user/upload/" + this.id, data).then((res) => {
+                axios.post("http://106.13.164.46:8081/user/upload/" + this.id, data).then((res) => {
                     this.userPortrait = res.data;
                     console.log(res.data);
                 });
